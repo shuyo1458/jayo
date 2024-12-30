@@ -2,7 +2,8 @@ document.getElementById('searchBtn').addEventListener('click', function() {
     console.log('查詢按鈕被點擊');
     const studentId = document.getElementById('studentId').value;
     const urlParams = new URLSearchParams(window.location.search);
-    const classId = urlParams.get('class'); // 取得URL參數
+    const classId = urlParams.get('class').toUpperCase(); // 取得URL參數並轉成大寫
+   
 
     if (!classId) {
         alert('參數錯誤：請提供班級ID。');
