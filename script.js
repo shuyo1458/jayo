@@ -1,6 +1,6 @@
 document.getElementById('searchBtn').addEventListener('click', function() {
     console.log('查詢按鈕被點擊');
-    const studentId = document.getElementById('studentId').value;
+    const studentId = document.getElementById('studentId').value.toUpperCase(); // 將用戶輸入的學號轉成大寫
     const urlParams = new URLSearchParams(window.location.search);
     const classId = urlParams.get('class').toUpperCase(); // 取得URL參數並轉成大寫
    
