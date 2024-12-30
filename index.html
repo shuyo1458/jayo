@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學號查詢</title>
+    <style>
+        #resultTable {
+            display: none; /* 初始隱藏表格 */
+        }
+    </style>
+</head>
+<body>
+    <h1>查詢學生資料</h1>
+    <input type="text" id="studentId" placeholder="請輸入學號">
+    <button id="searchBtn">查詢</button>
+    <table id="resultTable" border="1">
+        <thead>
+            <tr>
+                <th>學號</th>
+                <th>姓名</th>
+                <th>點名次數</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 查詢結果將顯示在這裡 -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
