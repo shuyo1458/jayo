@@ -2,7 +2,7 @@ document.getElementById('searchBtn').addEventListener('click', function() {
     console.log('查詢按鈕被點擊');
     const studentId = document.getElementById('studentId').value.toUpperCase(); // 將用戶輸入的學號轉成大寫
     const urlParams = new URLSearchParams(window.location.search);
-    const classId = urlParams.get('classId'); // 取得URL參數並轉成大寫
+    const classId = urlParams.get('class'); // 取得URL參數並轉成大寫
    
 
     if (!classId) {
@@ -12,20 +12,7 @@ document.getElementById('searchBtn').addEventListener('click', function() {
 
     // 根據班級ID選擇相應的JSON檔案的Google Drive鏈接
     const jsonFile = `${classId}.json`;
-    /*let jsonFile;
-    if (classId === '0810') {
-        //jsonFile = 'https://drive.google.com/uc?export=download&id=YOUR_0810_FILE_ID'; // 替換為實際的 FILE_ID
-        //jsonFile = 'https://drive.google.com/file/d/1wLQs7t30C0NQzkTEtRZZC_JqY9Av3Uzy/view?usp=drive_link';
-        jsonFile = 'https://drive.google.com/uc?export=download&id=1wLQs7t30C0NQzkTEtRZZC_JqY9Av3Uzy';
-        //https://drive.google.com/file/d/1wLQs7t30C0NQzkTEtRZZC_JqY9Av3Uzy/view?usp=drive_link
-    } else if (classId === '1012') {
-        jsonFile = 'https://drive.google.com/uc?export=download&id=1Z8ca0QUtcvKXwpUuiqBrsqlK21tYujUV'; // 替換為實際的 FILE_ID
-        //https://drive.google.com/file/d/1Z8ca0QUtcvKXwpUuiqBrsqlK21tYujUV/view?usp=drive_link
-    } else {
-        alert('不支持的班級ID');
-        return;
-    }
-    */
+  
     fetch(jsonFile)
         .then(response => response.json())
         .then(data => {
