@@ -10,7 +10,19 @@ document.getElementById('searchBtn').addEventListener('click', function() {
         return; // 如果沒有提供班級ID，則停止執行
     }
 
-    const jsonFile = `${classId}.json`; // 根據班級ID選擇相應的JSON檔案
+    // 根據班級ID選擇相應的JSON檔案的Google Drive鏈接
+    // const jsonFile = `${classId}.json`;
+    let jsonFile;
+    if (classId === '0810') {
+        //jsonFile = 'https://drive.google.com/uc?export=download&id=YOUR_0810_FILE_ID'; // 替換為實際的 FILE_ID
+        jsonFile = 'https://drive.google.com/file/d/1wLQs7t30C0NQzkTEtRZZC_JqY9Av3Uzy/view?usp=drive_link';
+    } else if (classId === '1012') {
+        //jsonFile = 'https://drive.google.com/uc?export=download&id=YOUR_1012_FILE_ID'; // 替換為實際的 FILE_ID
+        jsonFile = 'https://drive.google.com/file/d/1Z8ca0QUtcvKXwpUuiqBrsqlK21tYujUV/view?usp=drive_link';
+    } else {
+        alert('不支持的班級ID');
+        return;
+    }
 
     fetch(jsonFile)
         .then(response => response.json())
